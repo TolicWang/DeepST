@@ -2,6 +2,7 @@
 
 
 
-| Config | epoches| RMSE|
+| Config | epoches|loss ave| RMSE|
 |--|--|--|
-| L2-E |6082|22.32  |
+| L2-E |6082||22.32  |
+| L4-E |286|0.00060|20.55  |
