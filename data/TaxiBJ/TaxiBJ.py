@@ -274,10 +274,12 @@ def load_dataset(T=48, nb_flow=2, len_closeness=None, len_period=None, len_trend
     XP = np.vstack(XP)  # shape = [15072,2,32,32]
     XT = np.vstack(XT)  # shape = [15072,2,32,32]
     Y = np.vstack(Y)  # shape = [15072,2,32,32]
-    XC = XC.reshape(XC.shape[0], 32, 32, -1)
-    XP = XP.reshape(XP.shape[0], 32, 32, -1)
-    XT = XT.reshape(XT.shape[0], 32, 32, -1)
-    Y = Y.reshape(Y.shape[0], 32, 32, -1)
+
+    XC=np.transpose(XC,[0,2,3,1])
+    XP=np.transpose(XP,[0,2,3,1])
+    XT=np.transpose(XT,[0,2,3,1])
+    Y=np.transpose(Y,[0,2,3,1])
+
     print("XC shape: ", XC.shape, "XP shape: ", XP.shape, "XT shape: ", XT.shape, "Y shape:", Y.shape)
 
     XC_train, XP_train, XT_train, Y_train = XC[:-len_test], XP[:-len_test], XT[:-len_test], Y[:-len_test]
